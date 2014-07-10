@@ -42,7 +42,6 @@ public class NERComparison
 				   for (int l =0; l<otherLines.length; l++)
 				   {
 					   if (testLines[k].equals(otherLines[l]) && !testLines[k].trim().isEmpty() )
-				//	   if (testLines[k].contains(otherLines[l]))
 				//	   if(StringUtils.countMatches(testLines[k].toString(),otherLines[l].toString())!=0)   
 					   {
 					        System.out.println("There is a match: " +testLines[k]+"equals"+otherLines[l]);
