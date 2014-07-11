@@ -49,7 +49,9 @@ public class GermanNER {
 				    f.getParentFile().mkdirs();
 				if (!f.exists())
 				    f.createNewFile();
-			Util.writeFile( icq + "\n", output_filename, true);
+			String allLines = icq + "\n";	
+			Util.writeUTF8(allLines,  output_filename, true);
+		//	Util.writeFile( icq + "\n", output_filename, true);
 /*			Util.writeFile( "Writing phone numbers: \n"+phone + "\n", output_filename, true);
 			Util.writeFile( "Writing email: \n"+email + "\n", output_filename, true);
 			Util.writeFile( "Writing address: \n"+address + "\n", output_filename, true);

@@ -51,7 +51,7 @@ public class NERComparison
 							if (!f.exists())
 							    f.createNewFile();
 							if(!testLines[k].equals(null))
-						Util.writeFile(testID +" "+ otherID + "\n"+ testLines[k]+ "\n"+ otherLines[l] + "\n\n" , output_filename, true);
+						Util.writeUTF8(testID +" "+ otherID + "\n"+ testLines[k]+ "\n"+ otherLines[l] + "\n\n" , output_filename, true);
 						  
 					   }   
 				   }
