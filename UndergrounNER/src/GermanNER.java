@@ -88,15 +88,16 @@ public class GermanNER {
     }
 
     
-    public int icqCount(String cnt[]) {
+    public int icqCount(String cnt[]) throws IOException {
         InputStream is;
+        is = new FileInputStream(
+                "models/opennlp/GermanNerModels/de-ner-icq.bin");
+     
         TokenNameFinderModel tnf;
         NameFinderME nf;
         String sd = "";
         try {
-            is = new FileInputStream(
-                    "models/opennlp/GermanNerModels/de-ner-icq.bin");
-            tnf = new TokenNameFinderModel(is);
+               tnf = new TokenNameFinderModel(is);
             nf = new NameFinderME(tnf);
 
             Span sp[] = nf.find(cnt);
@@ -116,7 +117,11 @@ public class GermanNER {
 
             e.printStackTrace();
         }
+        finally {
+        	is.close();
+        }
         return 0;
+
     }
     
     public String icqFind(String cnt[]) {
